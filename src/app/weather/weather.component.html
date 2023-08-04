@@ -1,0 +1,76 @@
+<div class="weather-container">
+  <div class="weather-detail-container">
+    <div class="search-container">
+      <form #form="ngForm" (submit)="onSubmit()">
+        <input
+          type="text"
+          placeholder="Search location here"
+          name="city"
+          class="form-control search-bar"
+          [(ngModel)]="cityName"
+        />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+    <div *ngIf="weatherdata">
+      <div
+        *ngIf="weatherdata && weatherdata.length > 0"
+        class="weather-detail-report"
+      >
+        <h3 class="weather-title">{{ weatherdata[0].condition }}</h3>
+        <h1 class="temperature">{{ weatherdata[0].temp_c }}°C</h1>
+      </div>
+      <div
+        *ngIf="weatherdata && weatherdata.length > 0"
+        class="other-weather-report"
+      >
+        <div class="other-detail-report">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-brightness-high-fill icons"
+            viewBox="0 0 16 16"
+          >
+            <!-- Icon SVG path -->
+          </svg>
+          <h4 class="speed">{{ weatherdata[0].wind_kph }} km/h</h4>
+          <p class="weather">Wind</p>
+        </div>
+        <div class="other-detail-report">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-cloud-sun-fill icons"
+            viewBox="0 0 16 16"
+          >
+            <!-- Icon SVG path -->
+          </svg>
+          <h4 class="speed">{{ weatherdata[0].humidity }}%</h4>
+          <p class="weather">Humidity</p>
+        </div>
+        <div class="other-detail-report">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-cloud-moon-fill icons"
+            viewBox="0 0 16 16"
+          >
+            <!-- Icon SVG path -->
+          </svg>
+          <h4 class="speed">{{ weatherdata[0].wind_kph }} km/h</h4>
+          <p class="weather">Rain</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="weatherdata">
+      <h1>No matching data</h1>
+
+    </div>
+  </div>
+</div>
