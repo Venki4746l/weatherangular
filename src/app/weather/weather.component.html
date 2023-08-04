@@ -17,6 +17,7 @@
         *ngIf="weatherdata && weatherdata.length > 0"
         class="weather-detail-report"
       >
+      <h3>{{weatherdata[0].city}}</h3>
         <h3 class="weather-title">{{ weatherdata[0].condition }}</h3>
         <h1 class="temperature">{{ weatherdata[0].temp_c }}°C</h1>
       </div>
