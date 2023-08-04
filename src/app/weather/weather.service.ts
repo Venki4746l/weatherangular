@@ -8,7 +8,7 @@ import { WeatherData } from './weather';
   providedIn: 'root',
 })
 export class WeatherService {
-  private url: string = 'assets/weather.json';
+  private url: string = '../../assets/weather.json';
 
   constructor(private http: HttpClient) {}
 
